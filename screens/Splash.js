@@ -10,8 +10,10 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-
-const Splash = () => {
+import SignIn from "./SignIn";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+const Splash = ({navigation}) => {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -22,9 +24,9 @@ const Splash = () => {
                 /> 
             </View>
             <View style={styles.footer}>
-                <Text style={styles.title}>Welcome to your Finnace Manager !</Text>
+                <Text style={styles.title}>Welcome to your Finance Manager !</Text>
                 <View style={styles.button}>
-                    <TouchableOpacity onPress={()=>alert('You have signed in.')}>
+                    <TouchableOpacity onPress={()=>navigation.navigate('SignIn')}>
                     <LinearGradient
                         colors={['#C85D67', '#CB2635']}
                         style={styles.signIn}

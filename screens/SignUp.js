@@ -14,7 +14,7 @@ import Users from '../assets/users';
 import LinearGradient from 'react-native-linear-gradient';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-const SignIn = ({navigation}) => 
+const SignUp = ({navigation}) => 
 {
     const [data, setData] = React.useState({
         name: '',
@@ -46,7 +46,7 @@ const SignIn = ({navigation}) =>
     return (
         <View style = {styles.container}>
             <View style = {styles.header}>
-                <Text style={styles.text_header}>Welcome !!!</Text>
+                <Text style={styles.text_header}>Register !!!</Text>
             </View>
             <View style={styles.footer}>
                 <Text style={styles.textSign1}>Username</Text>
@@ -63,24 +63,26 @@ const SignIn = ({navigation}) =>
                     autoCapitalize = "none"
                     //onChangeText={(val1) => textInputChange(val1)}
                 />
+                <Text style={styles.textSign1}>Confirm password</Text>
+                <TextInput
+                    placeholder= 'Username'
+                    style={styles.textInput}
+                    autoCapitalize = "none"
+                    //onChangeText={(val) => textInputChange(val)}
+                />
+                <Text style={styles.textSign1}>Email</Text>
+                <TextInput
+                    placeholder= 'Email'
+                    style={styles.textInput}
+                    autoCapitalize = "none"
+                    //onChangeText={(val) => textInputChange(val)}
+                />
                 <View styles={styles.button} onPress={() => {loginHandle( val, val1)}}>
                     <LinearGradient
                         colors={['#C85D67', '#CB2635']}
                         style={styles.signIn}
                     >
-                    <Text style={[styles.textSign,{color:'#fff'}]}>Sign In</Text>
-                    </LinearGradient>
-                </View>
-                <View styles={styles.button}>
-                    <LinearGradient
-                        colors={['#fff', '#fff']}
-                        style={[styles.signIn,{
-                        borderColor: "#CB2635",
-                        borderWidth: 1.5,
-                        marginTop: 15,
-                        borderRadius: 30 }]}
-                    >
-                    <Text style={[styles.textSign,{color:'#CB2635'}]}>Sign Up</Text>
+                    <Text style={[styles.textSign,{color:'#fff'}]}>Sign Up</Text>
                     </LinearGradient>
                 </View>
             </View>
@@ -88,7 +90,7 @@ const SignIn = ({navigation}) =>
     )
 }
 
-export default SignIn;
+export default SignUp;
 
 const styles = StyleSheet.create({
     container: {
